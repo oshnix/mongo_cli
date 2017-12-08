@@ -7,7 +7,8 @@ spaceObjects.collectionName = 'spaceObjects';
 spaceObjects.schemaObject = {
     ObjectName: {
         type: String,
-        required: true
+        required: true,
+        index: true
     },
     ObjectClass: {
         type: String,

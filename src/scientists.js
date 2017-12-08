@@ -46,4 +46,10 @@ fields.BirthDate = {
     converter: value => new Date(value)
 };
 
+scientists.build = ({mongoose, vorpal}) => {
+    scientists.schema = new mongoose.Schema(scientists.schemaObject);
+    scientists.schema.index({FirstName: 1, LastName: 1});
+    Object.getPrototypeOf(scientists).build.call(scientists, {mongoose,vorpal})
+};
+
 module.exports = scientists.build.bind(scientists);

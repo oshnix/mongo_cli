@@ -3,8 +3,8 @@ const Util = require('./util');
 module.exports = {
     build({mongoose, vorpal}){
         this.buffer = [];
-        let schema = new mongoose.Schema(this.schemaObject);
-        this.model = mongoose.model(this.collectionName, schema, this.collectionName);
+        if(!this.schema) this.schema = new mongoose.Schema(this.schemaObject);
+        this.model = mongoose.model(this.collectionName, this.schema, this.collectionName);
 
         const findFunctions = {
             find: this.find.bind(this),
