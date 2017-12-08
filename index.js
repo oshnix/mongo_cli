@@ -9,6 +9,9 @@ cachegoose(mongoose, {
 
 const scientistsBuilder = require("./src/scientists");
 const spaceObjectsBuilder = require('./src/spaceObjects');
+const forumThemeBuilder = require('./src/forumTheme');
+
+
 const vorpal = require('vorpal')();
 require('string-format-js');
 
@@ -26,6 +29,7 @@ const options = {
 
 scientistsBuilder({mongoose, vorpal});
 spaceObjectsBuilder({mongoose, vorpal});
+forumThemeBuilder({mongoose, vorpal});
 
 mongoose.connect(uri, options).then(() => {
 	vorpal

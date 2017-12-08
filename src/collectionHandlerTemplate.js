@@ -4,7 +4,7 @@ module.exports = {
     build({mongoose, vorpal}){
         this.buffer = [];
         let schema = new mongoose.Schema(this.schemaObject);
-        this.model = mongoose.model(this.collectionName, schema);
+        this.model = mongoose.model(this.collectionName, schema, this.collectionName);
 
         const findFunctions = {
             find: this.find.bind(this),

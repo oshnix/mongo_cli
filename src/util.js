@@ -9,7 +9,7 @@ const Util = {
     itemPreOutput(item){
         let retVal = Object.assign(Object.create(null), item['_doc']);
         delete retVal['__v'];
-        retVal['_id'] = retVal['_id'].toString();
+        if(retVal['_id']) retVal['_id'] = retVal['_id'].toString();
         return retVal;
     },
     logResult(response){
