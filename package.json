@@ -1,0 +1,22 @@
+{
+  "name": "mongo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongo",
+    "js"
+  ],
+  "author": "oshnix",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "dotenv": "^4.0.0",
+    "mongoose": "^4.13.0",
+    "prettyjson": "^1.2.1",
+    "vorpal": "^1.12.0"
+  }
+}
