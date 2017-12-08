@@ -26,7 +26,7 @@ module.exports = {
         for (let field in args.options){
             if(this.fields[field] || field === '_id') searchParams[field] = args.options[field];
         }
-        const promise = args.options.single ? this.model.findOne(searchParams).exec() : this.model.find(searchParams).exec();
+        const promise = args.options.single ? this.model.findOne(searchParams).cache(30).exec() : this.model.find(searchParams).cache(30).exec();
         promise.then(response => {
             if(args.options.buffer){
                 this.buffer = Array.isArray(response) ? response : [response];

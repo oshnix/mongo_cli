@@ -23,11 +23,6 @@ spaceObjects.schemaObject = {
             required: true
         },
         coordinates: [Number],
-        /*validate: [
-            function validator(item){
-                return item.type == "Point" && item.coordinates.length == 2;
-            }, ''
-        ]*/
     }
 };
 

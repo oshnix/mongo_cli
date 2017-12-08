@@ -1,4 +1,12 @@
 const mongoose = require("mongoose");
+const cachegoose = require('cachegoose');
+
+cachegoose(mongoose, {
+    engine: 'redis',
+    port: 6379,
+    host: 'localhost'
+});
+
 const scientistsBuilder = require("./src/scientists");
 const spaceObjectsBuilder = require('./src/spaceObjects');
 const vorpal = require('vorpal')();
